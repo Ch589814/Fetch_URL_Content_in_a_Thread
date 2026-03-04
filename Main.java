@@ -12,12 +12,12 @@ public class Main {
         };
 
         // Start a separate thread for each URL
+
         for (int i = 0; i < urls.length; i++) {
             Thread t = new Thread(new URLFetcherThread(urls[i]));
             t.setName("FetcherThread-" + (i + 1));
             t.start();
         }
-        // Main thread can continue doing other tasks
         System.out.println("Main thread can keep doing other work while URLs are being fetched...");
     }
 }
