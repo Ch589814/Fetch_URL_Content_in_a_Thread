@@ -29,12 +29,14 @@ public class URLFetcherThread implements Runnable {
             System.out.println(
                     "Thread [" + Thread.currentThread().getName() + "] Error: IO Exception - " + e.getMessage());
         } finally {
+
             try {
                 if (reader != null)
                     reader.close();
             } catch (IOException e) {
                 System.out.println(
                         "Thread [" + Thread.currentThread().getName() + "] Error closing reader: " + e.getMessage());
+
             }
         }
     }
